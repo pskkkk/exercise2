@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <title>HTMLの要素を紹介</title>
+        <meta name="auther" content="留目 沙也">
+        <meta name="description" content="HTMLの要素をいくつか紹介するページです">
+        <link rel="stylesheet" href="styles/style.css">
+    </head>
+    <body>
+        <header>
+            <h1>HTMLの要素を紹介!!!</h1>
+        </header>
+        <main>
+            <article>
+                <h2>・このサイトについて</h2>
+                <p>このサイトでは<strong>日本大学文理学部情報科学科 Webプログラミングの演習課題</strong>の一貫として、いくつかのHTMLの要素について紹介しています。</p>
+                <p>要素についての詳細な説明に加え、理解を助けるための実際のコード例と実行結果が記載されています。</p>
+                <p>サイトの製作者は<strong>学籍番号5420033の留目沙也です。</strong></p>
+                <p>製作するにあたって、<a href="https://html.spec.whatwg.org/multipage/#toc-semantics">https://html.spec.whatwg.org/multipage/#toc-semantics</a>を参考にしています。<br>(参考: HTML（WHATWG Living Standard）,4 The elements of HTML,2021-11-8)</p>
+
+                <h2>・要素の紹介</h2>
+                <h3>1 h1,h2,h3,h4,h5,h6要素</h3>
+                <h4>1-1 要素についての説明</h4>
+                <p>これらはセクションごとの見出しを表す要素です。<br>名前に含まれる数字によってランクがあり、h1が最も大きい見出しとなります。数字が同じものは同じランクとなります。</p>
+                <p>原則として、<u>h1要素は一つのページにつき一度までしか使えません。</u>h2〜h6要素は何度でも使用可能です。<br>h7やh8要素はそもそも存在しません。</p>
+                <p>また、h4の中にh2を入れ子にするなど、数字の順番を入れ替えての使用もできません。</p>
+                <h4>1-2 コード例</h4>
+                <pre>
+                    <code>
+                        &lt;!DOCTYPE html&gt;
+                        &lt;body&gt;
+                            &lt;p&gt;1番大きな見出し&lt;/p&gt;
+                            &lt;p&gt;2番目に大きな見出し&lt;/p&gt;
+                            &lt;p&gt;3番目に大きな見出し&lt;/p&gt;
+                            &lt;p&gt;4番目に大きな見出し&lt;/p&gt;
+                            &lt;p&gt;3番目に大きな見出し その2&lt;/p&gt;
+                            &lt;p&gt;3番目に大きな見出し その3&lt;/p&gt;
+                            &lt;p&gt;2番目に大きな見出し その2&lt;/p&gt;
+                        &lt;/body&gt;
+                    </code>
+                </pre>
+                <h4>1-3 実行結果</h4>
+                <p>1-2のコードを実行すると以下のようになります。<br>特にCSSを使ったりはしていませんが、数字に応じて自動的に大きさが変わります。</p>
+                <img src="images/実行結果1.png" alt="h1~h6要素のコード例の実行結果">
+
+                <h3>2 strong要素</h3>
+                <h4>2-1 要素についての説明</h4>
+                <p>strong要素は、何か重要な事項など、文章中の特定部分を強調したい場合に使われます。<br>見出しやキャプション、段落内の文書など様々な部分に使用可能です。</p>
+                <p>強調したい部分をstrongの開始タグと終了タグで囲むことで、その部分が<u>太字</u>になります。</p>
+                <p>また、似たような要素としてem要素があります。<br>これはstrongほど強調しなくても良い場合に使われ、囲んだ部分が<u>斜字体</u>になります。</p>
+                <h4>2-2 コード例</h4>
+                <pre>
+                    <code>
+                        &lt;!DOCTYPE html&gt;
+                        &lt;body&gt;
+                        &lt;p&gt;strong要素で囲むと&lt;strong&gt;太字&lt;/strong&gt;で強調されます。&lt;/p&gt;
+                        &lt;p&gt;ちなみにem要素で囲むと&lt;em&gt;斜字体&lt;/em&gt;で強調されます。&lt;/p&gt;
+                        &lt;/body&gt;
+                    </code>
+                </pre>
+                <h4>2-3 実行結果</h4>
+                <p>2-2のコードを実行すると以下のようになります。<br>囲った部分が太字や斜字体になっていることが分かります。</p>
+                <img src="images/実行結果2.png" alt="strong要素のコード例の実行結果">
+
+                <h3>3 ol,ul,li要素</h3>
+                <h4>3-1 要素についての説明</h4>
+                <p>ol要素やul要素を用いることで、箇条書きリストを作成することができます。<br>ol(ordered list)要素は<u>順序のある</u>リスト、ul(unorderd list)要素は<u>順序のない</u>リストに用います。</p>
+                <p>li要素はol、ul要素で囲んだ中にリストの各項目を記述するために用います。<br>順序のないリストの場合、デフォルトでは各項目の印は黒点ですが、ul要素にtypeを設定することで変更が可能です。</p>
+                <h4>3-2 コード例</h4>
+                <pre>
+                    <code>
+                        &lt;!DOCTYPE html&gt;
+                        &lt;body&gt;
+                        &lt;p&gt;順序のあるリスト&lt;/p&gt;
+                            &lt;ol&gt;
+                                &lt;li&gt;項目&lt;/li&gt;
+                                &lt;li&gt;項目&lt;/li&gt;
+                                &lt;li&gt;項目&lt;/li&gt;
+                                &lt;li&gt;項目&lt;/li&gt;
+                            &lt;/ol&gt;
+
+                            &lt;p&gt;順序のないリスト&lt;/p&gt;
+                            &lt;ul type="circle"&gt;
+                                &lt;li&gt;項目&lt;/li&gt;
+                                &lt;li&gt;項目&lt;/li&gt;
+                                &lt;li&gt;項目&lt;/li&gt;
+                                &lt;li&gt;項目&lt;/li&gt;
+                            &lt;/ul&gt;
+                        &lt;/body&gt;
+                    </code>
+                </pre>
+                <h4>3-3 実行結果</h4>
+                <p>3-2のコードを実行すると以下のようになります。それぞれリストに順序がついている、ついていないことが分かります。<br>順序のついていないリストの項目の印は白丸に変更しています。</p>
+                <img src="images/実行結果3.png" alt="ol,ul,li要素のコード例の実行結果">
+            </article>
+        </main>
+        
+    </body>
+</html>
